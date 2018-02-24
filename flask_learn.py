@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import make_response
 from flask import redirect
+from flask import abort
 
 app = Flask(__name__)
 
@@ -29,6 +30,12 @@ def return_reponse():
 @app.route('/redirect')
 def return_redirect():
     return redirect('https://www.baidu.com')
+
+
+# abort 处理错误
+@app.route('/abort')
+def return_abort():
+    abort(403)  # abort(404)
 
 
 if __name__ == '__main__':
