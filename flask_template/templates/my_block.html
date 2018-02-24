@@ -1,0 +1,17 @@
+{% extends 'block_base.html' %}
+
+{% block title %} My Title {% endblock %}
+
+{% block head %}
+    {{ super() }}
+
+    <style>
+        body{
+            color: yellow;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Hello world!</h1>
+{% endblock %}

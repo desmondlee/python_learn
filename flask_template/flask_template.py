@@ -18,6 +18,12 @@ def hello(name):
     return render_template('hello.html', username=name, comments=comments)
 
 
+# block 模板继承
+@app.route('/block')
+def return_block():
+    return render_template('my_block.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
