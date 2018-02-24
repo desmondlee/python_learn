@@ -15,3 +15,8 @@ def hello(name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# 执行命令:
+# export FLASK_APP=flask_learn.py
+# flask run
