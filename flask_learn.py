@@ -3,6 +3,7 @@ from flask import Flask
 from flask import make_response
 from flask import redirect
 from flask import abort
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -32,10 +33,16 @@ def return_redirect():
     return redirect('https://www.baidu.com')
 
 
-# abort 处理错误
+# abort 处理错误（抛出异常）
 @app.route('/abort')
 def return_abort():
     abort(403)  # abort(404)
+
+
+# errorhandler 友好处理错误：（格式化输出）
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
 
 
 if __name__ == '__main__':
