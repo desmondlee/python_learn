@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask import render_template
+from flask_bootstrap import Bootstrap  #需要执行 pip3 install flask-bootstrap 安装扩展
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 
 
 # 未向模板传递参数：
@@ -22,6 +24,12 @@ def hello(name):
 @app.route('/block')
 def return_block():
     return render_template('my_block.html')
+
+
+# bootstrap 使用：
+@app.route('/bootstrap/<username>')
+def return_bootstrap(username):
+    return render_template('my_bootstrap.html', name=username)
 
 
 if __name__ == '__main__':
