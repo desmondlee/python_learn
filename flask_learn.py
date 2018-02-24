@@ -10,7 +10,7 @@ def index():
 
 @app.route('/hello/<name>')
 def hello(name):
-    return '<h2> hello %s' % name
+    return '<h2> hello %s' % name, 200 # 第二个参数200 表示返回的状态码
 
 
 if __name__ == '__main__':
