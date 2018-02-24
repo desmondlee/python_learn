@@ -14,7 +14,8 @@ def index():
 # 向模板传递参数：
 @app.route('/hello/<name>')
 def hello(name):
-    return render_template('hello.html', username=name)
+    comments = ['This is comment 1', 'This is comment 2', 'This is comment 3']
+    return render_template('hello.html', username=name, comments=comments)
 
 
 if __name__ == '__main__':

@@ -3,6 +3,21 @@
   <title>Home</title>
 </head>
 <body>
-  <h1 style="font-style:italic">Hello, {{username}}</h1>
+<!-- if 控制语句 -->
+  {% if username == 'des' %}
+    <h1 style="font-style:italic; color:red">Hello, Master</h1>
+  {% else %}
+    <h1 style="font-style:italic">Hello, {{username}}</h1>
+  {% endif %}
+
+<!-- for 控制语句 -->
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment }}</li>
+        {% endfor %}
+    </ul>
+
+<!-- include 其他模板-->
+{% include 'banner.html' %}
 </body>
 </html>
