@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
 from flask import make_response
+from flask import redirect
 
 app = Flask(__name__)
 
@@ -22,6 +23,12 @@ def return_reponse():
     response = make_response("<h1>This document carries a cookie!</h1>")
     response.set_cookie('answer', '42')
     return response
+
+
+# 重定向：
+@app.route('/redirect')
+def return_redirect():
+    return redirect('https://www.baidu.com')
 
 
 if __name__ == '__main__':
